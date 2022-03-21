@@ -1,0 +1,11 @@
+---
+name: demo_rule
+pack: st2track
+description: Sample rule firing on st2track.demo_event.
+enabled: true
+trigger:
+    type: st2track.demo_event
+action:
+    ref: st2track.alertscript
+    parameters:
+        greeting: Alert!

@@ -1,0 +1,10 @@
+---
+class_name: "PingSensor"
+entry_point: "demo_sensor.py"
+description: "Test sensor that emits pings."
+trigger_types:
+  -
+    name: "demo_event"
+    description: "An example trigger."
+    payload_schema:
+      type: "object"

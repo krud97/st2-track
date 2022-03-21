@@ -1,0 +1,13 @@
+---
+name: alertscript
+pack: st2track
+runner_type: "local-shell-script"
+description: Hello StackStorm!
+enabled: true
+entry_point: alert.sh
+parameters:
+    greeting:
+        type: string
+        description: Execute script on action execution
+        required: true
+        position: 1
