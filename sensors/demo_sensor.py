@@ -23,11 +23,11 @@ class PingSensor(PollingSensor):
     def cleanup(self):
         pass
 
-    def add_trigger(self):
+    def add_trigger(self, trigger):
         pass
 
-    def update_trigger(self):
+    def update_trigger(self, trigger):
         pass
 
-    def remove_trigger(self):
+    def remove_trigger(self, trigger):
         pass
