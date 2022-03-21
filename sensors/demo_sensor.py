@@ -3,7 +3,7 @@ import subprocess
 
 class PingSensor(PollingSensor):
     def __init__(self, sensor_service, config=None, poll_interval=5) -> None:
-        super(PingSensor, self).init(sensor_service=sensor_service,
+        super(PingSensor, self).__init__(sensor_service=sensor_service,
                                     config=config,
                                     poll_interval=poll_interval
                                     )
