@@ -8,7 +8,7 @@ class PingSensor(PollingSensor):
                                     poll_interval=poll_interval
                                     )
         self._logger = self.sensor_service.get_logger(name=self.__class__.__name__)
-        self._trigger_ref = 'str2track.demo_event'
+        self._trigger_ref = 'st2track.demo_event'
 
     def setup(self):
         pass
