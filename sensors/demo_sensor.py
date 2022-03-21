@@ -1,4 +1,4 @@
-from st2reactor.sonsor.base import PollingSensor
+from st2reactor.sensor.base import PollingSensor
 import subprocess
 
 class PingSensor(PollingSensor):
