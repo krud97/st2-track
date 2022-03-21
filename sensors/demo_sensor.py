@@ -1,5 +1,5 @@
 from st2reactor.sensor.base import PollingSensor
-import subprocess
+from ping3 import ping
 
 class PingSensor(PollingSensor):
     def __init__(self, sensor_service, config=None, poll_interval=5) -> None:
@@ -14,9 +14,9 @@ class PingSensor(PollingSensor):
         pass
 
     def poll(self):
-        command = "ping -c 1 google.com"
-        is_alive = subprocess.call(command) == 0
-        payload = self._to_payload(is_alive)
+        server = 'google.com'
+        is_reachable = ping(server, size=1)
+        payload = self._to_payload(is_reachable)
         self._logger.debug("Injecting Trigger instance...")
         self.sensor_service.dispatch(self._trigger_ref, payload)
 
