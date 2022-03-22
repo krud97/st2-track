@@ -12,3 +12,6 @@ trigger_types:
         time_taken:
           type: "string"
           default: "0.00"
+        server_name:
+          type: "string"
+          default: "NA"

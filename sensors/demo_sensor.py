@@ -14,10 +14,10 @@ class PingSensor(PollingSensor):
         pass
 
     def poll(self):
-        server = '172.30.0.17'
-        is_reachable = ping(server, size=1, timeout=2)
+        server_name = '172.30.0.17'
+        is_reachable = ping(server_name, size=1, timeout=2)
         if(not is_reachable):
-            payload = {'time_taken': str(is_reachable)}
+            payload = {'time_taken': str(is_reachable), 'server_name': server_name}
             self._logger.debug("Injecting Trigger instance...")
             self.sensor_service.dispatch(self._trigger_ref, payload)
 

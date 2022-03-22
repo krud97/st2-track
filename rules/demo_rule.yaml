@@ -8,4 +8,4 @@ trigger:
 action:
     ref: st2track.alertscript
     parameters:
-        greeting: Alert!
+        server_name: "{{ trigger.server_name }}"

@@ -6,8 +6,8 @@ description: Hello StackStorm!
 enabled: true
 entry_point: alert.sh
 parameters:
-    greeting:
+    server_name:
         type: string
-        description: Execute script on action execution
+        description: server where the ping action has failed
         required: true
         position: 1

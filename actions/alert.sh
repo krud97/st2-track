@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$1, Script is Executed!"
+echo "Alert $1 is down!, Executing script to bring it up..."
