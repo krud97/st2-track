@@ -14,11 +14,12 @@ class PingSensor(PollingSensor):
         pass
 
     def poll(self):
-        server = 'google.com'
-        is_reachable = ping(server, size=1)
-        payload = {'time_taken': str(is_reachable)}
-        self._logger.debug("Injecting Trigger instance...")
-        self.sensor_service.dispatch(self._trigger_ref, payload)
+        server = '172.30.0.17'
+        is_reachable = ping(server, size=1, timeout=2)
+        if(not is_reachable):
+            payload = {'time_taken': str(is_reachable)}
+            self._logger.debug("Injecting Trigger instance...")
+            self.sensor_service.dispatch(self._trigger_ref, payload)
 
     def cleanup(self):
         pass
