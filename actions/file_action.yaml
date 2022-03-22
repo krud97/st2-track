@@ -1,0 +1,23 @@
+---
+name: filemonitor
+pack: st2track
+runner_type: "local-shell-script"
+description: Execute on file trigger
+enabled: true
+entry_point: monitor.sh
+parameters:
+    server_name:
+        type: string
+        description: server which caused the trigger
+        required: true
+        position: 1
+    src_path:
+        type: string
+        description: source path which is being monitored
+        required: true
+        position: 2
+    path_size:
+        type: string
+        description: size of the file
+        required: true
+        position: 3

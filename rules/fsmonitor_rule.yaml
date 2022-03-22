@@ -1,0 +1,15 @@
+---
+name: fsmonitor_rule
+pack: st2track
+description: Sample rule firing on webhook event.
+enabled: true
+trigger:
+    type: "core.st2.webhook"
+    parameters:
+      url: "monitorfs"
+action:
+    ref: st2track.filemonitor
+    parameters:
+        server_name: "{{ trigger.body.server_name }}"
+        src_path: "{{ trigger.body.src_path }}"
+        path_size: "{{ trigger.body.path_size }}"
