@@ -11,8 +11,7 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish: 
-          - stdout: <% result().stdout %>
-          - stderr: <% result().stderr %>
+          - task1out: <% result().stdout %>
         do: task2
 
   task2:
@@ -21,9 +20,8 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish:
-          - stdout: <% result().stdout %>
-          - stderr: <% result().stderr %>
+          - task2out: <% result().stdout %>
 
 output:
-  - stdout: <% ctx(stdout) %>
-  - stderr: <% ctx(stderr) %>
+  - task1out: <% ctx(task1out) %>
+  - task2out: <% ctx(task2out) %>
