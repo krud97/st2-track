@@ -14,7 +14,7 @@ class PingSensor(PollingSensor):
         pass
 
     def poll(self):
-        server_name = '172.30.0.17'
+        server_name = '172.30.0.18'
         is_reachable = ping(server_name, size=1, timeout=2)
         if(not is_reachable):
             payload = {'time_taken': str(is_reachable), 'server_name': server_name}
