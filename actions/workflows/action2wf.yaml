@@ -26,7 +26,7 @@ tasks:
 
   success:
     delay: 5
-    action: core.echo message="Script Execution finished"
+    action: core.echo message="Script Execution Successfully completed"
     next:
       - when: <% succeeded() %>
         publish:
