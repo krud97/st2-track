@@ -11,10 +11,10 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish: <% result().stdout %>
-        delay: 5
         do: task2
 
   task2:
+    delay: 5
     action: core.echo message="Script Execution finished"
     next:
       - when: <% succeeded() %>
