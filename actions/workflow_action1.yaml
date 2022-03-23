@@ -1,0 +1,12 @@
+---
+name: workflow_action1
+pack: st2track
+description: A basic sequential workflow.
+runner_type: orquesta
+entry_point: workflows/action1wf.yaml
+enabled: true
+parameters:
+  server_name:
+    required: true
+    type: string
+    default: test

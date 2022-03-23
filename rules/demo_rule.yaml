@@ -6,6 +6,6 @@ enabled: true
 trigger:
     type: st2track.demo_event
 action:
-    ref: st2track.alertscript
+    ref: st2track.workflow_action1
     parameters:
         server_name: "{{ trigger.server_name }}"

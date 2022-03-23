@@ -1,0 +1,23 @@
+version: 1.0
+
+description: A basic workflow that executes based on a file monitoring service.
+
+input:
+  - server_name
+  - cpu
+  - ram
+
+tasks:
+  task1:
+    action: st2track.filemonitor server_name=<% ctx(server_name) %> cpu=<% ctx(cpu) %> ram=<% ctx(ram) %>
+    next:
+      - when: <% succeeded() %>
+        publish: <% result().stdout %>
+        delay: 5
+        do: task2
+
+  task2:
+    action: core.echo message="Script Execution finished"
+    next:
+      - when: <% succeeded() %>
+        publish: <% result().stdout %>

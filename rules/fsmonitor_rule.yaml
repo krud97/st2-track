@@ -8,7 +8,7 @@ trigger:
     parameters:
       url: "monitorfs"
 action:
-    ref: st2track.filemonitor
+    ref: st2track.workflow_action2
     parameters:
         server_name: "{{ trigger.body.server_name }}"
         cpu: "{{ trigger.body.src_path }}"

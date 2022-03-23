@@ -1,0 +1,23 @@
+---
+name: workflow_action2
+pack: st2track
+description: A sequential workflow.
+runner_type: orquesta
+entry_point: workflows/action2wf.yaml
+enabled: true
+parameters:
+  server_name:
+    type: string
+    description: server which caused the trigger
+    default: test.com
+    required: true
+  cpu:
+    type: string
+    description: cpu utilization of the server which is being monitored
+    default: NA
+    required: true
+  ram:
+    type: string
+    description: ram usage of the system
+    default: NA
+    required: true
