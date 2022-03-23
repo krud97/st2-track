@@ -11,5 +11,5 @@ action:
     ref: st2track.filemonitor
     parameters:
         server_name: "{{ trigger.body.server_name }}"
-        src_path: "{{ trigger.body.src_path }}"
-        path_size: "{{ trigger.body.path_size }}"
+        cpu: "{{ trigger.body.src_path }}"
+        ram: "{{ trigger.body.path_size }}"

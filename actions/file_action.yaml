@@ -11,13 +11,13 @@ parameters:
         description: server which caused the trigger
         required: true
         position: 1
-    src_path:
+    cpu:
         type: string
-        description: source path which is being monitored
+        description: cpu utilization of the server which is being monitored
         required: true
         position: 2
-    path_size:
+    ram:
         type: string
-        description: size of the file
+        description: ram usage of the system
         required: true
         position: 3

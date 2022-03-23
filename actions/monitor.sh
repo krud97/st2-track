@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Server $1"
-echo "Path $2"
-echo "Size $3"
+echo "Server= $1"
+echo "CPU utilization= $2 %"
+echo "RAM usage= $3"
