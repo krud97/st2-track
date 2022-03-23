@@ -17,12 +17,28 @@ tasks:
         do: task2
 
   task2:
+    action: core.local cmd="echo $(( $RANDOM % 2 ))"
+    next:
+      - when: <% result().stdout = 1 %>
+        do: failure
+      - when: <% result().stdout = 0 %>
+        do: success
+
+  success:
     delay: 5
     action: core.echo message="Script Execution finished"
     next:
       - when: <% succeeded() %>
         publish:
           - task2out: <% result().stdout %>
+
+  failure:
+    delay: 5
+    action: core.echo message="Script Execution failed, generating SNOW ticket"
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - task2out: <% result().stdout %>          
 
 output:
   - task1out: <% ctx(task1out) %>
