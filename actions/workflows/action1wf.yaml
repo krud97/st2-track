@@ -10,7 +10,9 @@ tasks:
     action: st2track.alertscript server_name=<% ctx(server_name) %>
     next:
       - when: <% succeeded() %>
-        publish: <% result().stdout %>
+        publish: 
+          - stdout: <% result().stdout %>
+          - stderr: <% result().stderr %>
         do: task2
 
   task2:
@@ -18,7 +20,10 @@ tasks:
     action: core.echo message="Script Execution finished"
     next:
       - when: <% succeeded() %>
-        publish: <% result().stdout %>
+        publish:
+          - stdout: <% result().stdout %>
+          - stderr: <% result().stderr %>
 
 output:
   - stdout: <% ctx(stdout) %>
+  - stderr: <% ctx(stderr) %>
